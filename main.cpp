@@ -1,12 +1,17 @@
 #include "main.h"
 #include <random>
 #include <functional>
+#include <chrono>
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(700, 700), "SFML Raytracing Demo");
 	std::default_random_engine rng;
 	std::uniform_int_distribution<int> distribution(0, 700);
+	unsigned time = std::chrono::duration_cast<std::chrono::milliseconds>(
+		std::chrono::system_clock::now().time_since_epoch()
+		).count();
+	rng.seed(time);
 
 	std::vector<Line*> walls;
 	walls.push_back(new Line(0, 0, 0, 700));

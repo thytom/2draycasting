@@ -19,6 +19,13 @@ void Particle::move(sf::Vector2f pos)
 
 void Particle::scatter(sf::RenderWindow *rw, std::vector<Line*> walls)
 {
+	scatter(rw, walls, NULL);
+}
+
+// Shader Version
+void Particle::scatter(sf::RenderWindow *rw,
+		std::vector<Line*> walls, sf::Shader *s)
+{
 	for(size_t i = 0; i < rays.size(); i++) // For each ray
 	{
 		auto r = rays[i];

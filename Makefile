@@ -6,7 +6,7 @@ CXXFLAGS=-g -lsfml-graphics\
 OBJ=main.o line.o ray.o particle.o
 DEP=wall.h line.h main.h particle.h
 
-EXECUTABLE=Raytracer
+EXECUTABLE=Raycaster
 
 .phony:make clean all run
 

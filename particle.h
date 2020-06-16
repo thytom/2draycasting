@@ -9,6 +9,8 @@ class Particle // Emits rays all around it
 	public:
 		Particle(sf::Vector2f pos, int num_rays);
 		void scatter(sf::RenderWindow *rw, std::vector<Line*> walls);
+		void scatter(sf::RenderWindow *rw, std::vector<Line*> walls,
+				sf::Shader *s);
 		void move(sf::Vector2f pos);
 		sf::Vector2f pos;
 		std::vector<Ray*> rays;
